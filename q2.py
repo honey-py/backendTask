@@ -13,27 +13,23 @@ for i in range(n):
 
 whileLoopCounter = 1
 
-for i in [1, n + 1]:
-    if ceil(i/5) % 4 == 1:
+for i in range(1, n * n + 1):
+    if ceil(i/n) % 4 == 1:
         a = floor(whileLoopCounter) - 1
-        # for b in range(floor(whileLoopCounter) - 1, n + 1 - floor(whileLoopCounter)):
-        customer_input[a][floor(whileLoopCounter) + i - 2] = i
-    elif ceil(i/5) % 4 == 2:
+        customer_input[a][floor(whileLoopCounter) + (i%n) -2] = i
+    elif ceil(i/n) % 4 == 2:
         b = n - (floor(whileLoopCounter) - 1) - 1
-        # for a in range(floor(whileLoopCounter), n + 1 - floor(whileLoopCounter)):
-        customer_input[a][b] = i
-    elif ceil(i/5) % 4 == 3:
+        customer_input[n - (floor(whileLoopCounter) + (i%n) -1)][b] = i
+    elif ceil(i/n) % 4 == 3:
         a = n - (floor(whileLoopCounter) - 1) - 1
-        # for b in reversed(range(floor(whileLoopCounter) - 1, n - floor(whileLoopCounter))):
-        customer_input[a][b] = i
-    elif ceil(i/5) % 4 == 4:
+        customer_input[a][-(n - floor(whileLoopCounter) - (i%n) + 1)] = i
+    elif ceil(i/n) % 4 == 0:
         b = floor(whileLoopCounter) - 1
-        # for a in reversed(range(floor(whileLoopCounter), n + 1 - floor(whileLoopCounter))):
-        customer_input[a][b] = i
+        customer_input[-(n - floor(whileLoopCounter) - (i%n) + 1)][b] = i
 
-    whileLoopCounter += 0.25
+    whileLoopCounter += 1 / n
 
-# print(n - (floor(whileLoopCounter) - 1))
+print(whileLoopCounter)
 
 for i in range(n):
     print(customer_input[i])
