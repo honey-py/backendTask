@@ -1,18 +1,11 @@
+from utils import remove_duplicates
+
 inputListInitial = [1, 2, 3, 7, 4, 5, 7, 8, 10, 13, 14, 15, 16, 17, 23, 12, 6, 9, 342, 435, 54]
 target = int(input("target number: "))
 output = []
 rmIndex = []
 
-
 # Removing duplicates from inputList
-
-
-def remove_duplicates(input_list, output_list):
-    for i in range(len(input_list)):
-        if input_list[i] not in output_list:
-            output_list.append(input_list[i])
-
-
 inputList = []
 remove_duplicates(inputListInitial, inputList)
 inputList.sort()
