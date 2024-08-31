@@ -25,7 +25,6 @@ simplifiedItems.sort()
 sortedSimplifiedItems = sorted(simplifiedItems, key = simplifiedItems.count, reverse = True)
 sortedUniqueSimplifiedItems = []
 remove_duplicates(sortedSimplifiedItems, sortedUniqueSimplifiedItems)
-print(sortedUniqueSimplifiedItems)
 
 # creating 2d output array
 recommendation = []
@@ -34,7 +33,17 @@ for i in range(len(items)):
     recommendation[i] = []
 
 # making recommendation
-# for i in range(len(items)):
-#     tempItems = items.pop(i)
-#     for j in range(len(items) - 1):
-#         if
+
+for i in range(len(items)):
+    tempItems = items.pop(i)
+    print(tempItems)
+    for j in range(len(items) - 1):
+        for k in range(len(items[i])):
+            if items[i][k] not in items[j]:
+                uselessVar = 1
+            else:
+                if len(items[i]) < len(items[j]):
+                    for l in range(len(items[j]) - len(items[i])):
+                        recommendation[i].append(items[j][len(items[i])+l-1])
+
+print(recommendation)
