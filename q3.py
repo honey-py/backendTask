@@ -3,12 +3,18 @@ target = int(input("target number: "))
 output = []
 rmIndex = []
 
+
 # Removing duplicates from inputList
 
+
+def remove_duplicates(input_list, output_list):
+    for i in range(len(input_list)):
+        if input_list[i] not in output_list:
+            output_list.append(input_list[i])
+
+
 inputList = []
-for i in range(len(inputListInitial)):
-    if inputListInitial[i] not in inputList:
-        inputList.append(inputListInitial[i])
+remove_duplicates(inputListInitial, inputList)
 inputList.sort()
 # there were some bugs when list wasn't sorted
 
