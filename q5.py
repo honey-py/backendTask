@@ -24,7 +24,7 @@ for i in range(len(items)):
     for j in range(len(items[i])):
         simplifiedItems.append(items[i][j])
 simplifiedItems.sort()
-sortedSimplifiedItems = sorted(simplifiedItems, key = simplifiedItems.count, reverse = True)
+sortedSimplifiedItems = sorted(simplifiedItems, key=simplifiedItems.count, reverse=True)
 sortedUniqueSimplifiedItems = []
 remove_duplicates(sortedSimplifiedItems, sortedUniqueSimplifiedItems)
 
