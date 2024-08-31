@@ -3,8 +3,7 @@ target = int(input("target number: "))
 output = []
 rmIndex = []
 
-# Removing duplicates from inputList, will not consider adding same numbers to get target as of now, this is just to
-# ensure that no errors are generated. will add support for duplicates later if I have time.
+# Removing duplicates from inputList
 
 inputList = []
 for i in range(len(inputListInitial)):
